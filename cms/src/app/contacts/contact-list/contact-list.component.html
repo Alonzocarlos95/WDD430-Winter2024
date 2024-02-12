@@ -7,16 +7,7 @@
             </div>
             <div class="panel-body">
                 <ul class="list-group">
-                    <li class="list-group-item clearfix" *ngFor="let contact of contacts; let i = index">
-                        <div class="pull-left">
-                            <p class="list-group-item-text">
-                                <strong>{{ contact.name }}</strong>
-                            </p>
-                        </div>
-                        <div class="pull-right">
-                            <img src="{{ contact.imageUrl }}" alt="{{ contact.name }}" class="img-responsive" style="max-height: 50px;">
-                        </div>
-                    </li>
+                    <cms-cotact-item *ngFor="let contact of contacts; let i = index" [contactItem]="contact" (click)="onSelected(contact)"></cms-cotact-item>
                 </ul>
             </div>
         </div>

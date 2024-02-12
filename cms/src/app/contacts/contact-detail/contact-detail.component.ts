@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Contact } from '../contact.model';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,5 +10,10 @@ import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 export class ContactDetailComponent {
   faPen = faPen;
   faTrash = faTrash;
-  contact: Contact[];
+
+  // contact: Contact[];
+
+  @Input() contact: Contact;
+
+  
 }

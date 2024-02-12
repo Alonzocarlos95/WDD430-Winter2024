@@ -3,8 +3,11 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
+                    <div class="col-xs-12">
+                        <h3>{{ contact?.name }}</h3>
+                    </div>
                     <div class="col-xs-6 pull-left">
-                        <img src="" alt="" class="img-responsive">
+                        <img [src]="contact?.imageUrl" alt="contact?.name" class="img-responsive">
                     </div>
                     <div class="col-xs-6 pull-right">
                         <div class="row">
@@ -26,8 +29,8 @@
             </div>
             <div class="panel-body">
                <ul>
-                    <li><p><strong>Email:</strong></p></li>
-                    <li><p><strong>Phone:</strong></p></li>
+                    <li><p><strong>Email: </strong>{{ contact?.email }}</p></li>
+                    <li><p><strong>Phone: </strong>{{ contact?.phone }}</p></li>
                </ul>
             </div>
         </div>
