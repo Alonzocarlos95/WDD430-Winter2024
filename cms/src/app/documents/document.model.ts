@@ -1,3 +1,7 @@
 export class Document {
-    constructor(public id: number, name: string, description: string, url: string, children: string[]) {}
+    constructor(public id: number
+        , public name: string
+        , public description: string
+        , public url: string
+        , public children: string[]) {}
 }
