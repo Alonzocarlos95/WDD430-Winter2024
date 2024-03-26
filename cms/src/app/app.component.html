@@ -1,10 +1,11 @@
-<cms-header (selectedFeatureEvent)="selectedLink = $event"></cms-header>
+<cms-header></cms-header>
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <cms-contacts *ngIf="selectedLink === 'contacts'"></cms-contacts>
-      <cms-documents *ngIf="selectedLink === 'documents'"></cms-documents>
-      <cms-message-list *ngIf="selectedLink === 'messages'"></cms-message-list>
+      <router-outlet></router-outlet>
+      <!-- <cms-contacts></cms-contacts>
+      <cms-documents></cms-documents>
+      <cms-message-list></cms-message-list> -->
     </div>
   </div>
 </div>
