@@ -29,6 +29,7 @@ export class ContactDetailComponent implements OnInit {
     this.route.params.subscribe(
       (params: Params) => {
         this.contact = this.contactService.getContactId(params.id);
+        window.scrollTo(0, 0);
       }
     )
   }

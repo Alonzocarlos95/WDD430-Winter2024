@@ -36,6 +36,19 @@
                     <li><p><strong>Email: </strong>{{ contact?.email }}</p></li>
                     <li><p><strong>Phone: </strong>{{ contact?.phone }}</p></li>
                </ul>
+               <div *ngIf="contact?.group?.length">
+                    <p style="font-weight: bold !important;" class="text-info">Contacts in team:</p>
+                    <ul class="list-group">
+                        <li class="list-group-item clearfix" *ngFor="let singleContact of contact?.group">
+                            <div class="pull-left">
+                                <strong>{{ singleContact.name }}</strong>
+                            </div>
+                            <div class="pull-right">
+                                <img [src]="singleContact.imageUrl" alt="" class="img-responsive" style="max-height: 50px;">
+                            </div>
+                        </li>
+                    </ul>
+               </div>
             </div>
         </div>
     </div>

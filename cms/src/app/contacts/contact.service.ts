@@ -20,11 +20,17 @@ export class ContactService {
    }
 
   getContacts(): Contact[] {
-    return this.contacts.slice();
+    let allContacts = this.contacts.slice()
+    allContacts.forEach((contact) => !contact.imageUrl || contact.imageUrl === ' ' ? contact.imageUrl = '../../assets/images/no-pic.jpeg' : null)
+    return allContacts;
   }
 
   getContactId(id: string): any {
-   return this.contacts.find(contact => contact.id === id);
+    let contact = this.contacts.find(contact => contact.id === id);
+    if (!contact.imageUrl || contact.imageUrl === ' ') {
+      contact.imageUrl = '../../assets/images/no-pic.jpeg'
+    }
+   return contact;
   }
 
   getMaxId():number {
@@ -53,7 +59,7 @@ export class ContactService {
     this.contactListChangedEvent.next(this.contacts.slice());
   }
 
-  addDocument(newContact: Contact) {
+  addContact(newContact: Contact) {
     if (!newContact) {
       return;
     }
@@ -64,7 +70,7 @@ export class ContactService {
     this.contactListChangedEvent.next(this.contacts.slice());
   }
 
-  updateDocument(originalContact: Contact, newContact: Contact) {
+  updateContact(originalContact: Contact, newContact: Contact) {
     if (!(originalContact || newContact)) {
       return;
     }

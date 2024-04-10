@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Document } from '../document.model';
+import { DocumentService } from '../document.service';
 
 @Component({
   selector: 'cms-document-item',
@@ -8,4 +9,10 @@ import { Document } from '../document.model';
 })
 export class DocumentItemComponent {
   @Input() document: Document;
+
+  constructor(private documentService: DocumentService) {}
+
+  onEditDocument() {
+    this.documentService.startEditing.next('');
+  }
 }

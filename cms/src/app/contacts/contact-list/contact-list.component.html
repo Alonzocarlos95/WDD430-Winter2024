@@ -7,7 +7,15 @@
             </div>
             <div class="panel-body">
                 <ul class="list-group">
-                    <cms-cotact-item *ngFor="let contact of contacts; let i = index" [contactItem]="contact"></cms-cotact-item>
+                    <div cdkDropList 
+                    [cdkDropListData]="contacts">
+                        <div cdkDrag
+                        *ngFor="let contact of contacts; let i = index"
+                        [cdkDragData]="contact">
+                            <cms-cotact-item [contactItem]="contact"></cms-cotact-item>
+                        </div>
+                        <!-- <cms-cotact-item *ngFor="let contact of contacts; let i = index" [contactItem]="contact"></cms-cotact-item> -->
+                    </div>
                 </ul>
             </div>
         </div>

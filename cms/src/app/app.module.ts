@@ -20,6 +20,10 @@ import { MessageService } from './messages/message.service';
 import { AppRoutingModule } from './app-routing.module';
 import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
+import { FormsModule } from '@angular/forms';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 
 @NgModule({
   declarations: [
@@ -42,10 +46,12 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     FontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DragDropModule
   ],
-  providers: [MessageService],
+  providers: [MessageService, provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

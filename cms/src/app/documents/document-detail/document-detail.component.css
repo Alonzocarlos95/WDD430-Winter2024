@@ -17,3 +17,6 @@
     margin-right: .5rem !important;
   }
   
+  .text-break {
+    word-wrap: break-word !important;
+  }
