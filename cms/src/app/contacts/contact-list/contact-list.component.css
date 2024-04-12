@@ -5,3 +5,15 @@
 .inline-block {
     display: inline-block !important;
 }
+
+.d-flex {
+    display: flex !important;
+}
+
+.justify-space-between {
+    justify-content: space-between !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
