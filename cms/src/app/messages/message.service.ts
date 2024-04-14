@@ -38,7 +38,7 @@ export class MessageService {
   storeMessages() {
     const messagesFormatted = JSON.stringify(this.messages);
     this.http
-    .put(`${this.firebaseUrl}documents.json`
+    .put(`${this.firebaseUrl}messages.json`
     , messagesFormatted
     ,{
       headers: new HttpHeaders({

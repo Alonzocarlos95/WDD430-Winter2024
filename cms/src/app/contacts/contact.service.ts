@@ -60,7 +60,7 @@ export class ContactService {
 
   getContactId(id: string): any {
     let contact = this.contacts.find(contact => contact.id === id);
-    if (!contact.imageUrl || contact.imageUrl === ' ') {
+    if (!contact?.imageUrl || contact?.imageUrl === ' ') {
       contact.imageUrl = '../../assets/images/no-pic.jpeg'
     }
    return contact;
